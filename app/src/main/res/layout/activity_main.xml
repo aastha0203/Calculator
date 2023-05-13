@@ -5,11 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/solution_tv"
+        android:text="0"
+        android:textSize="32dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:layout_above="@id/result_tv"
+        android:layout_margin="16dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/result_tv"
+        android:text="0"
+        android:textSize="64dp"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:layout_above="@id/buttons_layout"
+        android:layout_margin="16dp"
+        />
+
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:orientation="vertical"
-       android:id="@+id/buttons_layout">
+       android:id="@+id/buttons_layout"
+       android:layout_alignParentBottom="true"
+       android:background="#A34EA0AA"
+       android:paddingVertical="16dp"
+       >
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
@@ -24,6 +52,7 @@
                android:textSize="32dp"
                android:id="@+id/button_c"
                android:textColor="@color/white"
+               android:backgroundTint="#E91E63"
                android:layout_margin="12dp" />
            <com.google.android.material.button.MaterialButton
                android:layout_width="72dp"
@@ -165,6 +194,7 @@
                android:textSize="32dp"
                android:id="@+id/button_1"
                android:textColor="@color/white"
+               android:backgroundTint="#3A3537"
                android:layout_margin="12dp" />
            <com.google.android.material.button.MaterialButton
                android:layout_width="72dp"
@@ -212,6 +242,7 @@
                android:textSize="20dp"
                android:id="@+id/button_ac"
                android:textColor="@color/white"
+               android:backgroundTint="#E91E63"
                android:layout_margin="12dp" />
            <com.google.android.material.button.MaterialButton
                android:layout_width="72dp"
