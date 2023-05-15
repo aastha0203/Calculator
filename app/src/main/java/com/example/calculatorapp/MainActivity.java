@@ -12,7 +12,9 @@ import org.mozilla.javascript.Scriptable;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TextView resultTv, solutionTv;
-    MaterialButton buttonC, buttonBrackOpen, buttonBrackClose;
+    MaterialButton buttonC;
+    MaterialButton buttonBrackOpen;
+    MaterialButton buttonBrackClose;
     MaterialButton buttonDivide, buttonMultiply, buttonPlus, buttonMinus, buttonEquals;
     MaterialButton button0, button1, button2, button3, button4, button5, button6, button7, button8, button9;
     MaterialButton buttonAC, buttonDot;
