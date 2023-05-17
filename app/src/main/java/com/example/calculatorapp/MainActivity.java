@@ -10,7 +10,7 @@ import com.google.android.material.button.MaterialButton;
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView resultTv, solutionTv;
     MaterialButton buttonC;
     MaterialButton buttonBrackOpen;
@@ -49,18 +49,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         assignId(buttonDot, R.id.button_dot);
 
 
-
-
     }
 
-    void assignId(MaterialButton btn, int id){
+    void assignId(MaterialButton btn, int id) {
         btn = findViewById(id);
         btn.setOnClickListener(this);
     }
 
-    public void OnClick(View view){
+    public void OnClick(View view) {
+
         MaterialButton button = (MaterialButton) view;
-        String buttonText  = button.getText().toString();
+        String buttonText = button.getText().toString();
         solutionTv.setText(buttonText);
     }
 
@@ -70,32 +69,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String buttonText = button.getText().toString();
         String dataToCalculate = solutionTv.getText().toString();
 
-        if(buttonText.equals("AC")){
+        if (buttonText.equals("AC")) {
             solutionTv.setText("");
             resultTv.setText("0");
             return;
         }
-        if(buttonText.equals("=")){
+        if (buttonText.equals("=")) {
             solutionTv.setText(resultTv.getText());
             return;
         }
-        if (buttonText.equals("C")){
-            dataToCalculate = dataToCalculate.substring(0,dataToCalculate.length()-1);
-        }else{
-            dataToCalculate = dataToCalculate+buttonText;
+        if (buttonText.equals("C")) {
+            dataToCalculate = dataToCalculate.substring(0, dataToCalculate.length() - 1);
+        } else {
+            dataToCalculate = dataToCalculate + buttonText;
 
         }
-
 
         solutionTv.setText(dataToCalculate);
-
-        String finalResult = getResult(dataToCalculate);
-
-        if(!finalResult.equals("Err")){
+        String finalResult;
+        if (dataToCalculate.length() > 0) {
+            finalResult = getResult(dataToCalculate);
+        } else {
+            finalResult = "0";
+        }
+        if (!finalResult.equals("Err")) {
             resultTv.setText(finalResult);
         }
-
     }
+
     String getResult(String data){
         try{
             Context context = Context.enter();
